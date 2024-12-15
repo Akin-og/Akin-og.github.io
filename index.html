@@ -28,12 +28,12 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 10px;
+      gap: 9px;
     }
     .nav-links li a {
-      color: white;
+      color: rgba(255, 255, 255, 0);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 12px;
     }
     #banner {
       display: flex;
@@ -43,7 +43,7 @@
       height: 100vh;
       background-color: #121212;
       opacity: 0;
-      animation: fadeIn 2s forwards;
+      animation: fadeIn 4s forwards;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -67,7 +67,7 @@
       padding: 20px;
       text-align: center;
       transform: translateX(100%);
-      animation: slideIn 1s ease-in-out forwards;
+      animation: slideIn 5s ease-in-out forwards;
     }
     .project:nth-child(odd) {
       animation-delay: 0.2s;
