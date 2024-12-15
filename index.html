@@ -12,6 +12,7 @@
       font-family: Arial, sans-serif;
       background-color: black;
       color: white;
+      overflow-x: hidden;
     }
     header {
       position: fixed;
@@ -21,18 +22,18 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding: 10px 20px;
+      padding: 10px 10px;
       z-index: 1000;
     }
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 15px;
+      gap: 10px;
     }
     .nav-links li a {
       color: white;
       text-decoration: none;
-      font-size: 10px;
+      font-size: 14px;
     }
     #banner {
       display: flex;
@@ -41,9 +42,21 @@
       text-align: center;
       height: 100vh;
       background-color: #121212;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     #projects {
       padding: 80px 20px;
+    }
+    #projects h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
@@ -53,23 +66,49 @@
       border-radius: 10px;
       padding: 20px;
       text-align: center;
+      transform: translateX(100%);
+      animation: slideIn 1s ease-in-out forwards;
+    }
+    .project:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+    .project:nth-child(even) {
+      animation-delay: 0.4s;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
     }
     .project a {
-      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
       color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
     }
-    .project h3 {
-      margin: 10px 0;
+    .project a:hover {
+      background-color: #0056b3;
+    }
+    .project p {
+      font-size: 14px;
     }
     #contact {
-      padding: 50px 20px;
+      padding: 80px 20px;
       text-align: center;
+      max-width: 800px;
+      margin: auto;
+      background: #1e1e1e;
+      border-radius: 10px;
     }
     #contact form {
-      display: inline-block;
-      text-align: left;
-      max-width: 400px;
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
     footer {
       text-align: center;
@@ -102,44 +141,44 @@
   <!-- Projects Section -->
   <section id="projects">
     <h2>My Projects</h2>
-    <div class="project">
-      <h3>Connected Component Analysis</h3>
-      <p> Tool(s) and Language(s): Java, Intellij IDEA </p>
-      <p>Analyzing binary images to identify connected components.</p>
-      <a href="https://github.com/Akin-og/Connected-Component-Analysis-on-Binary-Images" target="_blank">View</a>
-    </div>
-    <div class="project">
-      <h3>Email Automation Bot</h3>
-      <p> Tool(s) and Language(s): JavaScript, Google Scripts, Gmail API </p>
-      <p>An automated tool for sending job application emails.</p>
-      <a href="https://github.com/Akin-og/Email-Automation-Bot-for-Job-Applications" target="_blank">View</a>
-    </div>
-    <div class="project">
-      <h3>Bank Management System</h3>
-      <p> Tool(s) and Language(s): Java, Intellij IDEA </p>
-      <p>A console-based application for managing bank operations.</p>
-      <a href="https://github.com/Akin-og/Bank-Management-System" target="_blank">View</a>
-    </div>
-    <div class="project">
-      <h3>Unit Converter</h3>
-      <p> Tool(s) and Language(s): Python, MS Visual Studio Code </p>
-      <p>Converts values between metric and imperial units.</p>
-      <a href="https://github.com/Akin-og/Metric-and-Imperial-Unit-Converter" target="_blank">View </a>
-    </div>
-    <div class="project">
-      <h3>Random Password Generator</h3>
-      <p> Tool(s) and Language(s): Java, Intellij IDEA </p>
-      <p> Geenerate radndom password from Upper & Lower case-letters along with numeric and symbolic values.</p>
-      <a href="https://github.com/Akin-og/Random-Password-Generator" target="_blank">View </a>
+    <div class="project-grid">
+      <div class="project">
+        <h3>Connected Component Analysis</h3>
+        <p> Tool(s) and Language(s): Java, Intellij IDEA </p>
+        <p>Analyzing binary images to identify connected components.</p>
+        <a href="https://github.com/Akin-og/Connected-Component-Analysis-on-Binary-Images" target="_blank">View</a>
+      </div>
+      <div class="project">
+        <h3>Email Automation Bot</h3>
+        <p> Tool(s) and Language(s): JavaScript, Google Scripts, Gmail API </p>
+        <p>An automated tool for sending job application emails.</p>
+        <a href="https://github.com/Akin-og/Email-Automation-Bot-for-Job-Applications" target="_blank">View</a>
+      </div>
+      <div class="project">
+        <h3>Bank Management System</h3>
+        <p> Tool(s) and Language(s): Java, Intellij IDEA </p>
+        <p>A console-based application for managing bank operations.</p>
+        <a href="https://github.com/Akin-og/Bank-Management-System" target="_blank">View</a>
+      </div>
+      <div class="project">
+        <h3>Unit Converter</h3>
+        <p> Tool(s) and Language(s): Python, MS Visual Studio Code </p>
+        <p>Converts values between metric and imperial units.</p>
+        <a href="https://github.com/Akin-og/Metric-and-Imperial-Unit-Converter" target="_blank">View</a>
+      </div>
+      <div class="project">
+        <h3>Random Password Generator</h3>
+        <p> Tool(s) and Language(s): Java, Intellij IDEA </p>
+        <p> Generate random password from upper & lower case letters, numeric, and symbolic values.</p>
+        <a href="https://github.com/Akin-og/Random-Password-Generator" target="_blank">View</a>
+      </div>
     </div>
   </section>
 
   <!-- Contact Form -->
   <section id="contact">
     <h2>Get in Touch</h2>
-    <form action="https://submit-form.com/maARnyds7oVhKbl3lpXO2" method="POST">
-      <input type="hidden" name="_redirect" value="https://akinportfolio.com/thank-you.html">
-      <input type="hidden" name="_email.subject" value="New message from your portfolio!">
+    <form action="mailto:eyitest@gmail.com" method="POST" enctype="text/plain">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
 
@@ -164,9 +203,13 @@
   </footer>
 
   <script>
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    // Smooth fade-in for banner
+    document.addEventListener("DOMContentLoaded", () => {
+      const projects = document.querySelectorAll(".project");
+      projects.forEach((project, index) => {
+        project.style.animationDelay = `${index * 0.2}s`;
+      });
+    });
   </script>
 </body>
 </html>
