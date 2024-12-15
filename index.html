@@ -3,55 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Akin's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
     }
     header {
-      background-color: #007acc;
-      color: #fff;
-      padding: 1rem 0;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 1000;
     }
-    section {
-      padding: 2rem;
-      text-align: center;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
     }
-    a {
-      color: #007acc;
+    .nav-links li a {
+      color: white;
       text-decoration: none;
+      font-size: 18px;
+    }
+    #banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      background-color: #121212;
+    }
+    #projects {
+      padding: 80px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .project a {
+      text-decoration: none;
+      color: white;
+    }
+    .project h3 {
+      margin: 10px 0;
+    }
+    #contact {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    #contact form {
+      display: inline-block;
+      text-align: left;
+      max-width: 400px;
+      width: 100%;
     }
     footer {
-      margin-top: 2rem;
-      background-color: #333;
-      color: #fff;
-      padding: 1rem 0;
       text-align: center;
+      padding: 20px;
+      background-color: #222;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>Welcome to My Portfolio</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="resume.pdf" target="_blank"><img src="images/resume-icon.png" alt="Resume" width="30"></a></li>
+        <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn" width="30"></a></li>
+        <li><a href="https://github.com/yourgithub" target="_blank"><img src="images/github-icon.png" alt="GitHub" width="30"></a></li>
+      </ul>
+    </nav>
   </header>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm <strong>Your Name</strong>, a passionate developer.</p>
+
+  <!-- Banner -->
+  <section id="banner">
+    <div class="inner">
+      <h2>Akin</h2>
+      <p>A showcase of my projects and abilities.</p>
+      <a href="#projects" class="button">View Projects</a>
+    </div>
   </section>
+
+  <!-- Projects Section -->
   <section id="projects">
     <h2>My Projects</h2>
-    <ul>
-      <li><a href="https://github.com/yourusername/project1" target="_blank">Project 1</a></li>
-      <li><a href="https://github.com/yourusername/project2" target="_blank">Project 2</a></li>
-    </ul>
+    <div class="project">
+      <h3>Connected Component Analysis</h3>
+      <p>Analyzing binary images to identify connected components.</p>
+      <a href="https://github.com/Akin-og/Connected-Component-Analysis-on-Binary-Images" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Email Automation Bot</h3>
+      <p>An automated tool for sending job application emails.</p>
+      <a href="https://github.com/Akin-og/Email-Automation-Bot-for-Job-Applications" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Bank Management System</h3>
+      <p>A console-based application for managing bank operations.</p>
+      <a href="https://github.com/Akin-og/Bank-Management-System" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Unit Converter</h3>
+      <p>Converts values between metric and imperial units.</p>
+      <a href="https://github.com/Akin-og/Metric-and-Imperial-Unit-Converter" target="_blank">View on GitHub</a>
+    </div>
   </section>
+
+  <!-- Contact Form -->
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <form action="https://submit-form.com/maARnyds7oVhKbl3lpXO2" method="POST">
+      <input type="hidden" name="_redirect" value="https://akinportfolio.com/thank-you.html">
+      <input type="hidden" name="_email.subject" value="New message from your portfolio!">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2024 Your Name</p>
+    <p>&copy; 2024 Akin. All Rights Reserved.</p>
+    <ul>
+      <li><a href="mailto:youremail@example.com">Email</a></li>
+      <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/yourgithub" target="_blank">GitHub</a></li>
+    </ul>
   </footer>
+
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
