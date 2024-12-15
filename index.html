@@ -28,15 +28,16 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 9px;
+      gap: 10px;
     }
     .nav-links li a {
-      color: rgba(255, 255, 255, 0);
+      color: white;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 14px;
     }
     #banner {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -44,6 +45,11 @@
       background-color: #121212;
       opacity: 0;
       animation: fadeIn 4s forwards;
+    }
+    #banner img {
+      width: 500px;
+      height: auto;
+      margin-bottom: 20px;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -67,7 +73,7 @@
       padding: 20px;
       text-align: center;
       transform: translateX(100%);
-      animation: slideIn 5s ease-in-out forwards;
+      animation: slideIn 8s ease-in-out forwards;
     }
     .project:nth-child(odd) {
       animation-delay: 0.2s;
@@ -131,6 +137,7 @@
 
   <!-- Banner -->
   <section id="banner">
+    <img src="chi.jpg" alt="Chicago Skyline">
     <div class="inner">
       <h2>Akin</h2>
       <p>A showcase of my projects and abilities.</p>
@@ -196,14 +203,13 @@
   <footer>
     <p>&copy; 2024 Akin. All Rights Reserved.</p>
     <ul>
-      <li><a href="mailto:youremail@example.com">Email</a></li>
+      <li><a href="mailto:eyisanmi@gmail.com">Email</a></li>
       <li><a href="https://linkedin.com/in/eyisanmi/" target="_blank">LinkedIn</a></li>
       <li><a href="https://github.com/Akin-og/" target="_blank">GitHub</a></li>
     </ul>
   </footer>
 
   <script>
-    // Smooth fade-in for banner
     document.addEventListener("DOMContentLoaded", () => {
       const projects = document.querySelectorAll(".project");
       projects.forEach((project, index) => {
